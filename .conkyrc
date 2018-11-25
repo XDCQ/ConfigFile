@@ -1,0 +1,39 @@
+background yes
+use_xft yes
+maximum_width 300
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+alignment top_right
+gap_x 30
+gap_y 80
+no_buffers yes
+default_color white
+
+default_shade_color black
+
+TEXT
+$alignc$nodename  $kernel  $machine
+$alignc${time %T %x %a}
+$hr
+System Status:
+Uptime:$alignr$uptime
+CPU Frequency:${alignr}$freq MHz
+RAM:$alignr$mem/$memmax
+${memgraph 15}
+Processes: $processes Running: $running_processes
+Swap Usage:   $alignr$swap/$swapmax
+Battery:$alignc$battery_percent%$alignr$battery_time
+$hr
+Network Status:
+IP address:$alignr${if_up enp3s0}enp3s0:$alignr${addr enp3s0}
+Real:$alignc Down $alignr ${downspeedf enp3s0}KB/s
+$alignc UP $alignr${upspeedf enp3s0}KB/s
+Total:$alignc Down $alignr${totaldown enp3s0}
+$alignc UP $alignr${totalup enp3s0}$endif
+$hr
+File System Status:
+Total:${fs_used /}/${fs_size /}
+Home:${fs_used /home/xdcq}/${fs_size /home/xdcq}
+${fs_bar 15 /}
