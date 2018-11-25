@@ -4,3 +4,4 @@
 
 目前已经包含
 - conkyrc
+- nginx
