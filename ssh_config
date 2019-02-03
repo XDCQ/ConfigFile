@@ -1,0 +1,5 @@
+Host 122
+Hostname 122.194.116.205
+Port 22
+User wonders
+IdentityFile ~/.ssh/taizhou
